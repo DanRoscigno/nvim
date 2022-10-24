@@ -12,6 +12,16 @@ require("packer").startup(function()
   use("nvim-treesitter/nvim-treesitter")
   use ('nvim-lualine/lualine.nvim')
   use ('https://github.com/rhysd/vim-grammarous')
+  use {
+  "folke/zen-mode.nvim",
+  config = function()
+    require("zen-mode").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  end
+}
 
   require("mason").setup()
   require("mason-lspconfig").setup()
