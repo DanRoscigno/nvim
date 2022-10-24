@@ -62,7 +62,6 @@ vim.api.nvim_set_keymap("n", "<leader>gc", ":GrammarousCheck<CR>", { noremap = t
 -- Cancel Grammarous check
 vim.api.nvim_set_keymap("n", "<leader>gq", ":GrammarousReset<CR>", { noremap = true })
 vim.cmd([[
-let g:grammarous#show_first_error=1
 let g:grammarous#hooks = {}
 function! g:grammarous#hooks.on_check(errs) abort
   nmap <buffer><C-n> <Plug>(grammarous-move-to-next-error)
