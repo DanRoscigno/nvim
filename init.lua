@@ -10,7 +10,6 @@ require("packer").startup(function()
   use("morhetz/gruvbox")
   vim.cmd([[colorscheme gruvbox]])
   use("nvim-treesitter/nvim-treesitter")
-  use ('nvim-lualine/lualine.nvim')
   use ('https://github.com/rhysd/vim-grammarous')
   use {
   "folke/zen-mode.nvim",
@@ -31,12 +30,6 @@ require("packer").startup(function()
     ensure_installed = { "lua", "markdown" },
     highlight = {
       enable = false,
-    },
-  })
-  require("lualine").setup({
-    options = {
-      icons_enabled = false,
-      theme = "auto",
     },
   })
   use("junegunn/fzf")
@@ -63,6 +56,7 @@ vim.api.nvim_set_keymap("n", "<leader>gc", ":GrammarousCheck<CR>", { noremap = t
 vim.api.nvim_set_keymap("n", "<leader>gq", ":GrammarousReset<CR>", { noremap = true })
 vim.cmd([[
 let g:grammarous#hooks = {}
+let g:grammarous#info_window_height = 6
 function! g:grammarous#hooks.on_check(errs) abort
   nmap <buffer><C-n> <Plug>(grammarous-move-to-next-error)
   nmap <buffer><C-p> <Plug>(grammarous-move-to-previous-error)
