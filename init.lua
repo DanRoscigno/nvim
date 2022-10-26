@@ -59,6 +59,7 @@ let g:grammarous#hooks = {}
 let g:grammarous#info_window_height = 6
 function! g:grammarous#hooks.on_check(errs) abort
   nmap <buffer><C-n> <Plug>(grammarous-move-to-next-error)
+  nmap <buffer><C-w> <Plug>(grammarous-move-to-info-window)
   nmap <buffer><C-p> <Plug>(grammarous-move-to-previous-error)
   nmap <buffer><C-f> <Plug>(grammarous-fixit)
   nmap <buffer><C-i> <Plug>(grammarous-remove-error) <Plug>(grammarous-move-to-next-error)
