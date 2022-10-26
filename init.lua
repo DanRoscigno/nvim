@@ -32,6 +32,12 @@ require("packer").startup(function()
   end
 }
   use('tpope/vim-fugitive')
+  use {
+  'lewis6991/gitsigns.nvim',
+  config = function()
+    require('gitsigns').setup()
+  end
+}
 
   require("mason").setup()
   require("mason-lspconfig").setup()
@@ -113,7 +119,9 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 vim.cmd([[
 set statusline=
 set statusline+=%#PmenuSel#
-set statusline+=%{FugitiveStatusline()}
+set statusline+=%{get(b:,'gitsigns_head','')}
+set statusline+=\ 
+set statusline+=%{get(b:,'gitsigns_status','')}
 set statusline+=%#LineNr#
 set statusline+=\ %t
 set statusline+=\ %m
