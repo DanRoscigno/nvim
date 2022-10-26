@@ -1,6 +1,16 @@
 vim.opt.number = true
 vim.cmd([[packadd packer.nvim]])
 require("packer").startup(function()
+  use {
+  "folke/which-key.nvim",
+  config = function()
+    require("which-key").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  end
+  }
   use("wbthomason/packer.nvim")
   use {
     "williamboman/mason.nvim",
@@ -21,6 +31,7 @@ require("packer").startup(function()
     }
   end
 }
+  use('tpope/vim-fugitive')
 
   require("mason").setup()
   require("mason-lspconfig").setup()
@@ -98,3 +109,16 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
+-- Basic statusline, uses Fugitive to get the git branch
+vim.cmd([[
+set statusline=
+set statusline+=%#PmenuSel#
+set statusline+=%{FugitiveStatusline()}
+set statusline+=%#LineNr#
+set statusline+=\ %t
+set statusline+=\ %m
+set statusline+=%=
+set statusline+=%#CursorColumn#
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+]])
