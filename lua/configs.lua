@@ -23,20 +23,25 @@ vim.opt.wrap = false
 
 -- Map global leader from \ to Space
 vim.g.mapleader = " "
--- Basic statusline, uses Fugitive to get the git branch
+-- Basic statusline, uses GitSigns to get the git branch/status
 vim.cmd([[
 set statusline=
 set statusline+=%#PmenuSel#
+
 set statusline+=%{get(b:,'gitsigns_head','')}
 set statusline+=\ 
 set statusline+=%{get(b:,'gitsigns_status','')}
+
 set statusline+=%#LineNr#
+
+set statusline+=%#PmenuSel#
 set statusline+=\ %t
 set statusline+=\ %m
+
 set statusline+=%=
+
 set statusline+=%#CursorColumn#
 set statusline+=\ %p%%
-set statusline+=\ %l:%c
 ]])
 
 vim.cmd([[
