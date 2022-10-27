@@ -1,12 +1,26 @@
+-- convert tabs to two spaces
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+
+-- show linenumbers
 vim.opt.number = true
+
+-- show whitespace chars at end of line
 vim.opt.list = true
 vim.opt.listchars:append("tab:> ")
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+
+-- hightlight current line and also column
 vim.opt.cursorline = true
 vim.opt.cursorcolumn = true
-vim.opt.swapfile = false
+
+-- swapfile: I am turning this back on
+--vim.opt.swapfile = false
+
+-- dont wrap lines. Note: in markdown files the lines
+-- are wrapped with a plugin separate from this setting
 vim.opt.wrap = false
+
 -- Map global leader from \ to Space
 vim.g.mapleader = " "
 -- Basic statusline, uses Fugitive to get the git branch
