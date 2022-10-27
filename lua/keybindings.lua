@@ -10,3 +10,4 @@ vim.api.nvim_set_keymap("n", "<leader>gq", ":GrammarousReset<CR>", { noremap = t
 -- Floaterm
 -- let g:floaterm_keymap_toggle = '<Leader>t'
 vim.api.nvim_set_keymap("n", "<leader>t", ":FloatermToggle<CR>", { noremap = true })
+vim.api.nvim_set_keymap("t", "<leader>t", '<C-\\><C-n>:FloatermToggle<CR>', { noremap = true })
