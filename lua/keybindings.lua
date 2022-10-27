@@ -7,3 +7,6 @@ vim.api.nvim_set_keymap("n", "<leader>gc", ":GrammarousCheck<CR>", { noremap = t
 -- Cancel Grammarous check
 vim.api.nvim_set_keymap("n", "<leader>gq", ":GrammarousReset<CR>", { noremap = true })
 -- Note: further Grammarous keybindings are in config.lua
+-- Floaterm
+-- let g:floaterm_keymap_toggle = '<Leader>t'
+vim.api.nvim_set_keymap("n", "<leader>t", ":FloatermToggle<CR>", { noremap = true })

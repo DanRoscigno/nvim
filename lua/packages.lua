@@ -29,14 +29,14 @@ require("packer").startup(function()
       -- refer to the configuration section below
     }
   end
-}
+  }
   use('tpope/vim-fugitive')
   use {
   'lewis6991/gitsigns.nvim',
   config = function()
     require('gitsigns').setup()
   end
-}
+  }
 
   require("mason").setup()
   require("mason-lspconfig").setup()
@@ -50,4 +50,5 @@ require("packer").startup(function()
   })
   use("junegunn/fzf")
   use("junegunn/fzf.vim")
+  use('voldikss/vim-floaterm')
 end)
