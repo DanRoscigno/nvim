@@ -6,10 +6,14 @@ require("packer").startup(function()
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
   }
+  require('lspconfig').grammarly.setup{
+	init_options = { clientId = 'client_BaDkMgx4X19X9UxxYRCXZo', },
+	cmd = { "grammarly-languageserver", "--stdio" },
+  }
   use("morhetz/gruvbox")
   vim.cmd([[colorscheme gruvbox]])
   use("nvim-treesitter/nvim-treesitter")
-  use ('https://github.com/rhysd/vim-grammarous')
+  -- use ('https://github.com/rhysd/vim-grammarous')
   use {
   "folke/zen-mode.nvim",
   config = function()
